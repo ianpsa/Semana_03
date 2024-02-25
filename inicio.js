@@ -19,15 +19,16 @@ function preload() {
 function create() {
     // adiciona as imagens ao canvas
     this.add.image(larguraJogo/2, alturaJogo/2, 'background');
+
     //cria o alien, turbo e define que o alien colide com o fim do mapa
     fogo = this.add.image(0,0, 'turbo_nave');
+    
     fogo.setVisible(false) //torna o fogo da nave inicialmente não-visível
 
     alien = this.physics.add.sprite(larguraJogo/2, 0, 'player'); //adiciona o sprite do alien com física
+    
     alien.setCollideWorldBounds(true); //adiciona colisão com os limites do canvas
     
-  //  Inimigo = this.physics.add.sprite( larguraJogo/2, alturaJogo/1.5, 'Inimigo'); //adiciona inimigo com física do jogo
-
     teclado = this.input.keyboard.createCursorKeys(); //adiciona input das setas do mouse
     
 
