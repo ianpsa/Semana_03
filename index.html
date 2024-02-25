@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!--define a linguagem da página-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício do Alien</title> <!--define o nome da aba-->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script> <!--adiciona o caminho para a framework phaser-->
+    <script src="Inicio.js"></script> <!--adiciona o script do game-->
+    <style> body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; } </style> <!--define o "estilo" página-->
+</head>
+
+<body>
+    <script>
+    // Cria-se a constante de largura e altura do jogo par ser usada posteriormente
+    const larguraJogo = 700;
+    const alturaJogo = 850;
+
+    // Configura o jogo, tamanho do canvas e define as funções
+    const config = {
+        type: Phaser.AUTO,
+        width: larguraJogo,
+        height: alturaJogo,
+        
+        physics: { //define a gravidade, modo de jogo e modo debug
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 300 },
+                debug: true
+            }
+        },
+        scene: {//adiciona as classes que definem as cenas dentro do jogo
+            preload: preload,
+            create: create,
+            update: update
+        } 
+    };
+
+    // define a constante game
+
+    const game = new Phaser.Game(config);
+
+    </script>
+</body>
+</html>
